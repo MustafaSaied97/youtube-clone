@@ -79,8 +79,8 @@ const VideoCard = ({loading,video:{id:{videoId},snippet},from}) => {
                         {snippet?.title.slice(0,60)||demoVideoTitle.slice(0,60)}
                     </Typography>
                 </Link>
-                <Link to={snippet?.channelId? `/channel/${snippet?.channelId}` : demoChannelUrl }>
-                    <Typography variant='subtitle2' fontWeight='bold' color='gray' >
+                <Link to={snippet?.channelId? `/channel/${snippet?.channelId}` : demoChannelUrl } onMouseOver={(e)=>{e.target.style.color='#FFF'}} onMouseOut={(e)=>{e.target.style.color='gray'}}>
+                    <Typography variant='subtitle2' fontWeight='bold' color='gray'sx={{width:'50%'}} >
                         {snippet?.channelTitle||demoChannelTitle}
                         <CheckCircle sx={{fontSize:'12px',color:'gray',ml:'5px'}}/>
                     </Typography>
