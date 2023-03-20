@@ -41,7 +41,7 @@ const VideoCard = ({video:{id:{videoId},snippet},type}) => {
             </Box>
         </Card>
         :
-        <Card  sx={{width:{xs:'100%',sm:'250px',md:'300px'}, borderRadius:'15px 15px 5px 5px' ,maxWidth:358 ,boxShadow:'none',border:'0',backgroundColor:'#0f0f0f' }}>
+        <Card  sx={{width:{xs:'90vw',sm:'250px',md:'300px'}, borderRadius:'15px 15px 5px 5px',backgroundColor:'#0f0f0f' }}>
             <Link to={videoId?`/video/${videoId}`:demoVideoUrl}>
      
                 <CardMedia

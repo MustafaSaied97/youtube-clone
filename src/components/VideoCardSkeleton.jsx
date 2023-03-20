@@ -10,10 +10,8 @@ const VideoCardSkeleton = ({type}) => {
   return (
     <>
     {type =='horizontal'?
-       <Card sx={{ display: 'flex' ,justifyContent:'flex-start',alignItems:'flex-start',width: {xs:'90vw',md:'80vw'},height:200,borderRadius:'15px ', backgroundColor:'#0f0f0f'}} >
-         <Link to={''} sx={{ width: '30%',borderRadius:'15px',height:'200px',objectFit:'cover',padding:'0px'}}>
-             <Skeleton variant="rectangular" sx={{  width: {xs:'150px',sm:'358px',md:'320px'},height:'200px',borderRadius:'15px' ,padding:'0px' ,bgcolor: '#363738' }} animation="wave"/>
-         </Link>
+       <Card sx={{ display: 'flex' ,justifyContent:'flex-start',alignItems:'flex-start',width: {xs:'90vw',md:'80vw'},height:{xs:150,md:200},borderRadius:'15px ', backgroundColor:'#0f0f0f'}} >
+             <Skeleton variant="rectangular" sx={{  width: {xs:'150px',sm:'250px',md:'290px'},height:{xs:150,md:200},borderRadius:'15px' ,padding:'0px' ,bgcolor: '#363738' }} animation="wave"/>
          <Box sx={{ display: 'flex', flexDirection: 'column' }}>
              <CardContent >
                  <Skeleton sx={{  width:{xs:'40vw'},bgcolor: '#363738', zIndex:'-3' }} />
@@ -26,7 +24,7 @@ const VideoCardSkeleton = ({type}) => {
     
 
      :
-     <Card  sx={{width:{xs:'100%',sm:'250px',md:'300px'}, borderRadius:'15px 15px 5px 5px' ,maxWidth:358 ,boxShadow:'none',border:'0',backgroundColor:'#0f0f0f' }}>
+     <Card  sx={{width:{xs:'90vw',sm:'250px',md:'300px'}, borderRadius:'15px 15px 5px 5px' ,maxWidth:358 ,boxShadow:'none',border:'0',backgroundColor:'#0f0f0f' }}>
          <Link to={''}>
              <Skeleton variant="rectangular" sx={{ width:{xs:'90vw',sm:'250px',md:'300px'},  height:180 ,bgcolor: '#363738',borderRadius:'15px' }} animation="wave"/>
          </Link>

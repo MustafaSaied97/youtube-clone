@@ -13,9 +13,9 @@ const Feed = () => {
 },[selectedCategory])
 
   return (
-    <Stack sx={{flexDirection:{sx:'column',md:'row'} ,justifyContent:'center' ,alignItems:'center'}} p={1}>
+    <Stack sx={{flexDirection:{sx:'column',md:'row'}  ,justifyContent:'center' ,alignItems:'center'}} p={1}>
 
-      <Box  sx={{height:{xs:'auto',md:'92vh'},borderRight:'1px solid #3d3d3d',px:{xs:0,md:2 } }}> 
+      <Box  sx={{height:{xs:'auto',md:'100vh'},borderRight:'1px solid #3d3d3d',px:{xs:0,md:2 } }}> 
 
         <SideBar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
 
@@ -27,7 +27,7 @@ const Feed = () => {
         </Typography>
 
 
-        <Stack className="Feed" direction='row' flexWrap='wrap' justifyContent='flex-start' alignItems='flex-start' alignContent='center' gap={2} width={'100%'}>
+        <Stack className="Feed" direction='row' flexWrap='wrap' justifyContent='flex-start' alignItems='flex-start' alignContent='center' gap={2} >
           <Videos  videos={videos} from={'Feed'} />
         </Stack>
       </Box>

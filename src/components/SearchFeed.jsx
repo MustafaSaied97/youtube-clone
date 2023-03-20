@@ -19,7 +19,7 @@ const SearchFeed = () => {
     </Typography>
    <Box>
 
-    <Stack className="SearchFeed" direction={'column'} flexWrap='wrap'   gap={2}  sx={{width:{xs:'90vw',sm:'90vw',md:'90vw'}}} pe={3} >
+    <Stack className="SearchFeed" direction={'column'} flexWrap='wrap'   gap={2}  sx={{width:{xs:'90vw',sm:'90vw',md:'90vw'}}} pe={2} >
       <Videos  videos={videos} from={'SearchFeed'}/>
     </Stack>
 
