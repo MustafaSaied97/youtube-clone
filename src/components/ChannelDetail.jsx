@@ -1,7 +1,7 @@
 import {useState,useEffect} from "react";
 import { useParams } from "react-router-dom";
-import { Box } from "@mui/material";
-import {Videos,VideoCard,ChannelCard} from '.'
+import {Stack, Box } from "@mui/material";
+import {Videos,VideoCard,ChannelCard,ChannelCardSkeleton} from '.'
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 
 const ChannelDetail = () => {
@@ -25,11 +25,15 @@ const ChannelDetail = () => {
             height:'300px'
           }}
         />
-        <ChannelCard channelDetail={channelDetail} marginTop={'-110px'}/>
+        {channelDetail?<ChannelCard channelDetail={channelDetail} marginTop={'-110px'}/> :<ChannelCardSkeleton marginTop={'-110px'}/>}
       </Box>
    
       <Box p={3} sx={{overflowY:'auto',height:'90vh',flex:2, }} >
-        <Videos videos={videos} from={'ChannelDetail'}/>
+
+        <Stack direction={'row'} flexWrap='wrap' justifyContent='center' alignItems='flex-start' alignContent='center' gap={3} width={'100%'}>
+          <Videos videos={videos} from={'ChannelDetail'}/>
+        </Stack>
+
       </Box>
     </Box>
   );

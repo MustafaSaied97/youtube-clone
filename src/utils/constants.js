@@ -31,8 +31,6 @@ export const categories = [
   { name: 'ReactJS', icon: <WebhookIcon />, },
   { name: 'web development', icon: <PublicIcon />, },
   { name: 'JS Mastery', icon: <DataObjectIcon />, },
-  { name: 'Space', icon: <RocketIcon />, },
-  { name: 'Education', icon: <SchoolIcon />, },
   { name: 'Podcast', icon: <GraphicEqIcon />, },
   { name: 'Movie', icon: <OndemandVideoIcon />, },
   { name: 'Gaming', icon: <SportsEsportsIcon />, },

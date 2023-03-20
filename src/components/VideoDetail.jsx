@@ -18,18 +18,16 @@ const VideoDetail = () => {
     fetchFromAPI(`search?part=snippet&relatedVideoId=${id}`)
     .then((data)=>setVideos(data.items))
   },[id])
-  console.log(videos)
   if(!videoDetail?.snippet) return 'Loading...';
   const{snippet:{title,channelId,channelTitle} , statistics:{viewCount,likeCount}}=videoDetail
-console.log(viewCount)
   return (
-    <Box minHeight='95vh'>
-      <Stack direction={{xs:'column',md:'row'}}>
+    <Box minHeight='95vh' sx={{width: '100%'}}>
+      <Stack direction={{xs:'column',sm:'column',md:'row'}}>
         <Box flex={1}>
 
-          <Box sx={{width:'100%',position:'sticky',top:'86px'}}>
+          <Box sx={{width:{xs:'100%'},position:'sticky',top:'86px'}}>
 
-            <ReactPlayer url={`https://www.youtube.com/watch?v=${id}`} className='react-player' controls/>
+            <ReactPlayer url={`https://www.youtube.com/watch?v=${id}`} className='react-player' controls playing={true}/>
 
             <Typography color='#fff' varient='h5' fontWeight='bold' p={2}>
               {title}
@@ -55,9 +53,10 @@ console.log(viewCount)
           </Box>
         </Box>
 
-        <Box px={4} py={{md:1,xs:5}} justifyConten='center' alignItems='center'>
-          <Videos videos={videos} direction={'column'}/>
-        </Box>
+
+        <Stack direction={'column'} flexWrap='wrap' alignItems={'center'} gap={2}  sx={{width:{xs:'90vw',sm:'90vw',md:'30vw'},px:'3vw' }} >
+          <Videos videos={videos}  from={'VideoDetail'}/>
+        </Stack>
 
       </Stack>
        
