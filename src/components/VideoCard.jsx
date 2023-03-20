@@ -6,7 +6,6 @@ import { useTheme } from '@mui/material/styles';
 import { demoThumbnailUrl,demoVideoUrl,demoVideoTitle ,demoChannelUrl,demoChannelTitle} from "../utils/constants";
 const VideoCard = ({video:{id:{videoId},snippet},type}) => {
     
-    // width: {xs:'90vw',md:'80vw'}
     return (
       <>
        {type =='horizontal'?
