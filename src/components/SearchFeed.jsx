@@ -10,10 +10,9 @@ const SearchFeed = () => {
     fetchFromAPI(`search?part=snippet&q=${searchTerm}`)
     .then((data)=> setVideos(data.items))
   },[searchTerm])
-  console.log(videos)
 
   return (
-    <Box  p={2} sx={{overflowY:'auto',height:'90vh',flex:2}}>
+    <Box  p={2} sx={{overflowY:'auto'}}>
 
     <Typography className="copyright" varient="h4" fontWeight='bold' mb={2} sx={{color:'white'}}> 
        Search Results for :<span style={{color:'#F31503'}}>{searchTerm}</span>

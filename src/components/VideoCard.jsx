@@ -9,7 +9,7 @@ const VideoCard = ({video:{id:{videoId},snippet},type}) => {
     return (
       <>
        {type =='horizontal'?
-          <Card sx={{ display: 'flex' ,justifyContent:'flex-start',alignItems:'flex-start',width:'100%',height:200,borderRadius:'15px ', backgroundColor:'#0f0f0f'}} >
+          <Card sx={{ display: 'flex' ,justifyContent:'flex-start',alignItems:'flex-start',width:'100%',height:{xs:150,md:200},borderRadius:'15px ', backgroundColor:'#0f0f0f'}} >
 
             <Link to={videoId?`/video/${videoId}`:demoVideoUrl} sx={{width:'40%'}} >
             
@@ -17,7 +17,7 @@ const VideoCard = ({video:{id:{videoId},snippet},type}) => {
                  component="img"
                  image={snippet?.thumbnails?.high?.url}
                  alt={snippet?.title}
-                 sx={{ height:'200px',borderRadius:'15px',objectFit:'cover',padding:'0px'}}
+                 sx={{ height:{xs:150,md:200},borderRadius:'15px',objectFit:'cover',padding:'0px'}}
                />
   
             </Link>
@@ -25,12 +25,12 @@ const VideoCard = ({video:{id:{videoId},snippet},type}) => {
                 <CardContent >
 
                     <Link to={videoId?`/video/${videoId}`:demoVideoUrl} >
-                        <Typography variant='subtitle1' fontWeight='bold' color='#FFF'   >
+                        <Typography variant='subtitle1' fontWeight='bold' color='#FFF'  sx={{ lineHeight:'1.5em',height:'3em',overflow:'hidden',textOverflow:'ellipsis'}} >
                             {snippet?.title.slice(0,60)||demoVideoTitle.slice(0,60)}
                         </Typography>
                     </Link>
                     <Link to={snippet?.channelId? `/channel/${snippet?.channelId}` : demoChannelUrl } onMouseOver={(e)=>{e.target.style.color='#FFF'}} onMouseOut={(e)=>{e.target.style.color='gray'}}>
-                        <Typography variant='subtitle2' fontWeight='bold' color='gray' >
+                        <Typography variant='subtitle2' fontWeight='bold' color='gray'sx={{lineHeight:'1.5em',height:'3em',textOverflow:'ellipsis',textOverflow:'ellipsis'}} >
                             {snippet?.channelTitle||demoChannelTitle}
                             <CheckCircle sx={{fontSize:'12px',color:'gray',ml:'5px'}}/>
                         </Typography>
