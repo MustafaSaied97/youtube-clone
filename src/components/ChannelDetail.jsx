@@ -1,7 +1,7 @@
 import {useState,useEffect} from "react";
 import { useParams } from "react-router-dom";
 import {Stack, Box } from "@mui/material";
-import {Videos,VideoCard,ChannelCard,ChannelCardSkeleton} from '.'
+import {Videos,ChannelCard,ChannelCardSkeleton} from '.'
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 
 const ChannelDetail = () => {
@@ -11,7 +11,6 @@ const ChannelDetail = () => {
   useEffect(()=>{
     fetchFromAPI(`channels?part=snippet&id=${id}`)
     .then((data)=>setChannelDetail(data?.items[0]))
-
     fetchFromAPI(`search?channelId=${id}&part=snippet&order=date`)
     .then((data)=>setVideos(data?.items))
   },[id])

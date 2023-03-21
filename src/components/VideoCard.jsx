@@ -16,7 +16,7 @@ const VideoCard = ({video:{id:{videoId},snippet},type}) => {
                  component="img"
                  image={snippet?.thumbnails?.high?.url}
                  alt={snippet?.title}
-                 sx={{ height:{xs:150,md:200},borderRadius:'15px',objectFit:'cover',padding:'0px'}}
+                 sx={{ height:{xs:150,md:200},minWidth:{xs:150,md:200},borderRadius:'15px',objectFit:'cover',padding:'0px'}}
                />
   
             </Link>

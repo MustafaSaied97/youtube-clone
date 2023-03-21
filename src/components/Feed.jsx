@@ -7,18 +7,9 @@ const Feed = () => {
   const [videos,setVideos]=useState([])
 
   useEffect(()=>{
-    // let action='not render'
-
-    setVideos([])//clear videos when click on anthoer category
-   fetchFromAPI(`search?part=id,snippet&q=${selectedCategory}`)
+  setVideos([])//clear videos when click on anthoer category
+  fetchFromAPI(`search?part=id,snippet&q=${selectedCategory}`)
   .then((data)=> setVideos(data.items))
-  // return ()=>{
-  //   action='is render'
-  //   console.log(action)
-
-  // }
-
-
 },[selectedCategory])
 
   return (

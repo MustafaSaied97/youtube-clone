@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
-import { Box,Typography,Card,CardContent,CardMedia ,Skeleton} from "@mui/material";
+import { Box,Typography,Card,CardContent,CardMedia } from "@mui/material";
 import { CheckCircle } from "@mui/icons-material";
 import { demoProfilePicture} from "../utils/constants";
 
 const ChannelCard = ({channelDetail,marginTop,type}) => {
-console.log(  channelDetail?.snippet?.thumbnails)
   return (
     <>
     {type =='horizontal'?
