@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
-import { Box,Typography,Card,CardContent,CardMedia ,Skeleton} from "@mui/material";
-import { CheckCircle } from "@mui/icons-material";
-import { demoProfilePicture} from "../utils/constants";
+import { Box,CardContent,Skeleton} from "@mui/material";
+
 const ChannelCardSkeleton = ({marginTop}) => {
   return (
     <Box
@@ -11,15 +10,15 @@ const ChannelCardSkeleton = ({marginTop}) => {
         display:'flex',
         justifyContent:'center',
         alignItems:'center',
-        width:{xs:'356px',md:'320px'},
-        height:'326px',
+        width:{xs:'90vw',sm:'250px',md:'300px'},
+        height:{xs:'200px',md:'326px'},
         margin:'auto',marginTop:marginTop
       }}
     >
       <Link to={''}>
         <CardContent sx={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',textAlign:'center',color:'#fff'}}>
     
-          <Skeleton variant="circular" width={180} height={180} sx={{ bgcolor: '#363738',borderRadius:'50%' }} animation="wave"/>
+          <Skeleton variant="circular"  sx={{borderRadius:'50%',height:{xs:'120px',md:'180px'},width:{xs:'120px',md:'180px'},mb:2,border:'1px solid #e3e3e3'}} animation="wave"/>
 
           <Skeleton width="70%" sx={{ bgcolor: '#363738' }}  />
         </CardContent>

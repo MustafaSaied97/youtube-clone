@@ -5,11 +5,20 @@ import { fetchFromAPI } from '../utils/fetchFromAPI';
 const Feed = () => {
   const [selectedCategory,setSelectedCategory]=useState('new')
   const [videos,setVideos]=useState([])
- 
+
   useEffect(()=>{
+    // let action='not render'
+
     setVideos([])//clear videos when click on anthoer category
    fetchFromAPI(`search?part=id,snippet&q=${selectedCategory}`)
   .then((data)=> setVideos(data.items))
+  // return ()=>{
+  //   action='is render'
+  //   console.log(action)
+
+  // }
+
+
 },[selectedCategory])
 
   return (
@@ -27,7 +36,7 @@ const Feed = () => {
         </Typography>
 
 
-        <Stack className="Feed" direction='row' flexWrap='wrap' justifyContent='flex-start' alignItems='flex-start' alignContent='center' gap={2} >
+        <Stack className="Feed" direction='row' flexWrap='wrap' justifyContent='flex-start' alignItems='flex-start' alignContent='center' gap={2}  >
           <Videos  videos={videos} from={'Feed'} />
         </Stack>
       </Box>

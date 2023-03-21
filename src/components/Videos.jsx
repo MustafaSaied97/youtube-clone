@@ -1,7 +1,7 @@
 import {useState,useEffect} from "react";
-import { Stack,Box } from "@mui/material";
-import {VideoCard,VideoCardSkeleton,ChannelCard,ChannelCardSkeleton} from './'
-const Videos = ({videos,direction,from}) => {
+import { Box } from "@mui/material";
+import {VideoCard,VideoCardSkeleton,ChannelCard} from './'
+const Videos = ({videos,from}) => {
 
   const[loading,setLoading]=useState(true)
   useEffect(()=>{
@@ -15,7 +15,6 @@ const Videos = ({videos,direction,from}) => {
  
 
   return(
-    // <Stack direction={direction||'row'} flexWrap='wrap' justifyContent='flex-start' alignItems='flex-start' alignContent='center' gap={2} width={'100%'}>
      <>
     {loading?
       <>
@@ -45,7 +44,7 @@ const Videos = ({videos,direction,from}) => {
           {videos?.map((item,indx)=>(
           <Box key={indx}  >
             {item.id.videoId && (<VideoCard video={item}  />)}
-            {item.id.channelId && <ChannelCard channelDetail={item} marginTop={'0px'} />}
+            {item.id.channelId && !from=='ChannelDetail'&&<ChannelCard channelDetail={item} marginTop={'0px'} />}
           </Box>
         ))}
         
@@ -59,9 +58,7 @@ const Videos = ({videos,direction,from}) => {
       
 
       </>
-    // </Stack>
   );
 };
 
 export default Videos;
-// {from!=='ChannelDetail'&& item.id.channelId && <ChannelCard channelDetail={item} marginTop={'0px'} />}

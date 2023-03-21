@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Paper,IconButton } from "@mui/material";
+import { Paper,IconButton,InputBase  } from "@mui/material";
 import {Search} from "@mui/icons-material"
 const SearchBar = () => {
     const[searchTerm,setSearchTerm]=useState('')
@@ -17,14 +17,13 @@ const SearchBar = () => {
     <Paper
         component='form'
         onSubmit={handleSubmit}
-        sx={{border:'1px solid #e3e3e3' ,borderRadius:20 ,boxShadow:'none' ,pl:2, mr:{sm:5}}}
+        sx={{display:'flex',border:'1px solid #e3e3e3' ,borderRadius:20 ,boxShadow:'none' ,pl:2, mr:{sm:5} ,width:{xs:'70%',in_xs:'auto'}}}
     >
-        <input 
+        <InputBase  
             className="search-bar" 
             placeholder="Search..."
             vlaue={searchTerm}
             onChange={(e)=>{setSearchTerm(e.target.value)}}
-    
         />
         <IconButton
             type="submit"

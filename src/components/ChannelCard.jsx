@@ -4,7 +4,7 @@ import { CheckCircle } from "@mui/icons-material";
 import { demoProfilePicture} from "../utils/constants";
 
 const ChannelCard = ({channelDetail,marginTop,type}) => {
- 
+console.log(  channelDetail?.snippet?.thumbnails)
   return (
     <>
     {type =='horizontal'?
@@ -12,9 +12,9 @@ const ChannelCard = ({channelDetail,marginTop,type}) => {
         
           <Link to={`/channel/${channelDetail?.id?.channelId||channelDetail?.id}`}  sx={{width:'40%',heigh:'100%'}}>
             <CardMedia
-              image={channelDetail?.snippet?.thumbnails?.high?.url||demoProfilePicture}
+              image={channelDetail?.snippet?.thumbnails?.medium?.url||demoProfilePicture}
               alt={channelDetail?.snippet?.title}
-              sx={{borderRadius:'50%',height:{xs:'120px',md:'180px'},width:{xs:'120px',md:'180px'},border:'1px solid #e3e3e3'}}
+              sx={{borderRadius:'50%',height:{xs:'120px',md:'180px'},width:{xs:'120px',md:'180px'},border:'1px solid #58575792'}}
             />
           </Link>
         
@@ -43,9 +43,9 @@ const ChannelCard = ({channelDetail,marginTop,type}) => {
         <Link to={`/channel/${channelDetail?.id?.channelId||channelDetail?.id}`}>
           <CardContent sx={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',textAlign:'center',color:'#fff'}}>
             <CardMedia
-              image={channelDetail?.snippet?.thumbnails?.high?.url||demoProfilePicture}
-              alt={channelDetail?.snippet?.title}
-              sx={{borderRadius:'50%',height:{xs:'120px',md:'180px'},width:{xs:'120px',md:'180px'},mb:2,border:'1px solid #e3e3e3'}}
+              image={channelDetail?.snippet?.thumbnails?.medium?.url||demoProfilePicture}
+              alt={channelDetail?.snippet?.thumbnails?.medium?.url}
+              sx={{borderRadius:'50%',height:{xs:'120px',md:'180px'},width:{xs:'120px',md:'180px'},mb:2,border:'1px solid #58575792'}}
             />
   
 
