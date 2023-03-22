@@ -21,7 +21,7 @@ const VideoCardSkeleton = ({type}) => {
      :
      <Card  sx={{width:{xs:'90vw',in_xs:'210px',sm:'250px',in_sm:'210px',md:'300px'}, borderRadius:'15px 15px 5px 5px' ,maxWidth:358 ,boxShadow:'none',border:'0',backgroundColor:'#0f0f0f' }}>
          <Link to={''}>
-             <Skeleton variant="rectangular" sx={{ width:{xs:'90vw',in_xs:'210px',sm:'250px',in_sm:'210px',md:'300px'},  height:180 ,bgcolor: '#363738',borderRadius:'15px' }} animation="wave"/>
+             <Skeleton variant="rectangular" sx={{ width:'100%',  height:180 ,bgcolor: '#363738',borderRadius:'15px' }} animation="wave"/>
          </Link>
          <CardContent sx={{height:'106px' }}>
              <Skeleton sx={{ bgcolor: '#363738', zIndex:'-3' }} />

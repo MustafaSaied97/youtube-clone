@@ -13,7 +13,7 @@ const VideoDetail = () => {
   const {id}=useParams()
 
   useEffect(()=>{
-    setVideos(null)//reset
+    videos.length!==null &&setVideos(null)//reset
     
     fetchFromAPI(`videos?part=snippet,statistics&id=${id}`)
     .then((data)=>setVideoDetail(data.items[0]))

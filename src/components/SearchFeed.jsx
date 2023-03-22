@@ -7,7 +7,7 @@ const SearchFeed = () => {
   const [videos,setVideos]=useState([])
   const {searchTerm}=useParams()
   useEffect(()=>{
-    setVideos([])//reset
+    videos.length!==0 && setVideos([])//reset
     fetchFromAPI(`search?part=snippet&q=${searchTerm}`)
     .then((data)=> setVideos(data.items))
 

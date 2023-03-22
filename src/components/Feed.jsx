@@ -7,7 +7,7 @@ const Feed = () => {
   const [videos,setVideos]=useState([])
 
   useEffect(()=>{
-  setVideos([])//clear videos when click on anthoer category
+    videos.length!==0 && setVideos([])//clear videos when click on anthoer category
   fetchFromAPI(`search?part=id,snippet&q=${selectedCategory}`)
   .then((data)=> setVideos(data.items))
 },[selectedCategory])
